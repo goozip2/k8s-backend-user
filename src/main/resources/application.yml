@@ -33,7 +33,7 @@ spring:
       # Key는 문자열로 직렬화
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       # Value는 JSON 형태로 직렬화
-      -serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         # Kafka 메시지에 Java 타입 정보가 담긴 헤더 추가 안함
         # Consumer 쪽에서 user.type.headers: false로 설정한 것과 맞추기

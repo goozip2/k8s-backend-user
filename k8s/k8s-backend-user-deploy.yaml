@@ -15,6 +15,9 @@ spec:
       containers:
       - name: k8s-backend-user
         image: goozip2/k8s-backend-user:0.0.1
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: dev
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

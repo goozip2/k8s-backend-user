@@ -21,6 +21,7 @@ public class UserController {
     @GetMapping(value = "/hello")
     public ApiResponseDto<String> hello() {
         String remoteMessage = remoteAlimService.hello().getData();
-        String userResponse = "웰컴 투 백엔드 유저. 리모트 알림 메시지= " + remoteMessage;return ApiResponseDto.createOk(userResponse);
+        String userResponse = "웰컴 투 백엔드 유저. 리모트 알림 메시지= " + remoteMessage;
+        return ApiResponseDto.createOk(userResponse);
     }
 }

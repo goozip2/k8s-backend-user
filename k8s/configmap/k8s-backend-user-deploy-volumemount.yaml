@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   name: k8s-backend-user-deployment
 spec:
-  replicas: 1
+  replicas: 1  # 원하는 파드 복제본 수 (기본값: 1)
   selector:
     matchLabels:
-      app: k8s-backend-user
+      app: k8s-backend-user  # 템플릿의 labels와 일치해야 함
   template:
     metadata:
       labels:
-        app: k8s-backend-user
+        app: k8s-backend-user  # selector와 일치해야 함
     spec:
       containers:
         - name: k8s-backend-user
-          image: goozip2/k8s-backend-user:0.0.1  #추후 버전 변경 필요
-          imagePullPolicy: Always
+          image: goozip2/k8s-backend-user:0.0.8
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: dev
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           volumeMounts:

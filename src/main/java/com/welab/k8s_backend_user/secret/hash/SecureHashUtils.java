@@ -20,7 +20,8 @@ public class SecureHashUtils {
         }
     }
 
-    public static boolean matches(String message, String hashedMessage) {String hashed = hash(message);
+    public static boolean matches(String message, String hashedMessage) {
+        String hashed = hash(message);
         return hashed.equals(hashedMessage);
     }
 }
